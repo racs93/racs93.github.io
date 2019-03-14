@@ -162,7 +162,35 @@ body {
   /* HERO STYLES */
   .full-hero {
     background-color: #c7dbfc;
-    height: 50vh;
+    background-size: cover;
+    box-sizing: border-box;
+    height: 75vh;
+    padding-top: 30vh;
+  }
+  .hero-home {
+    background-image: url(/images/FN_hero.jpeg);
+    background-position: center top;
+  }
+  .hero-content {
+    color: #fff;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  .hero-content h1 {
+    color: #000;
+    font-size: 7vw;
+    margin-bottom: 0.25em;
+  }
+  .hero-content .social-link {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #557c83;
+  }
+  .hero-content .social-link:hover {
+    background-color: #000;
+    color: #fff;
   }
 
   /* SOCIAL STYLES */
