@@ -1,5 +1,5 @@
-html, body, div, span, applet, object, iframe, h1, h2,
-h3, h4, h5, h6, p, blockquote, pre,
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -31,22 +31,7 @@ q:before, q:after {
   content: '';
   content: none;
 }
-table {<!DOCTYPE html>
-<html >
-  <head>
-    <meta charset="utf-8">
-    <title>Test Page: Don't Panic</title>
-    <link rel="stylesheet" href="/css/main.css">
-    <style>
-
-    </style>
-  </head>
-  {% include head.html %}
-  <body>
-    {% include header.html %}
-    <div class="full-hero hero-home">
-      <h1>I'm an h1</h1>
-      <ul class="social-list">
+table {
   border-collapse: collapse;
   border-spacing: 0;
 }
@@ -62,6 +47,10 @@ a img {
 /* END RESET */
 
 /* GLOBAL STYLES */
+html{
+  box-shadow: 0 0 0 30px #84aeb9 inset;
+  padding: 0 30px;
+}
 body {
   font-family: helvetica, arial, sans;
 }
@@ -72,10 +61,21 @@ body {
     font-size: 7vw;
     margin-top: 0;
   }
+  h2 ~ p {
+    font-size: 0.8em;
+    font-style: italic;
+    margin: 1em auto 0;
+    max-width: 70%;
+    text-align: center;
+  }
+
   /* HEADER SYLES */
   .header {
-    background-color: #000;
+    background-color: #3bf3ea;
     color: #fff;
+    position: fixed;
+    width: 100%;
+    z-index: 20;
   }
   .header-nav {
     float: right;
@@ -90,19 +90,15 @@ body {
     padding-left: 1em;
   }
   .header-nav a{
-    color: #fff;
-    font-size: 0.8rem;
-    font-weight: bold;
-    text-decoration: none;
-    text-transform: uppercase;
+    color: #000;
   }
   .header-nav a:hover,
   .header-nav a:active {
-    color: #ed6e2f;
+    color: #e16afa;
   }
   .header-logo:hover,
   .header-logo:active {
-    background-color: #ed6e2f;
+    background-color: #e16afa;
   }
   .header-nav > li:first-child a {
     color: #ed6e2f;
@@ -111,10 +107,11 @@ body {
     color: #fff;
   }
   .header-logo {
-    background-color: #000;
+    background-color: #3bf3ea;
     box-sizing: border-box;
     display: block;
     height: 10vh;
+    left: -30px;
     padding-top: 10px;
     position: relative;
     text-align: center;
@@ -123,12 +120,43 @@ body {
   .header-logo img {
     width: 8vh;
   }
-  h2 ~ p {
-    font-size: 0.8em;
-    font-style: italic;
-    margin: 1em auto 0;
-    max-width: 70%;
+  .header-nav a {
+    color: #fff;
+  }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .nav-links a:hover,
+  .nav-links a:active {
+    color: #ed6e2f
+  }
+
+  /* FOOTER STYLES */
+  .footer{
+    background-color: #e16afa;
+    padding: 10vh 0 15vh;
     text-align: center;
+  }
+  .footer-logo img {
+    width: 50px;
+  }
+  .footer h3 {
+    color: #fff;
+    padding-top: 1.5em;
+    text-transform: uppercase;
+  }
+  .footer h3 span {
+    color: #aaa;
+  }
+  .footer-nav li {
+    display: inline-block;
+    margin: 2em 1em 0;
+  }
+  .footer-nav a {
+    color: #ccc;
   }
 
   /* HERO STYLES */
@@ -178,7 +206,7 @@ body {
      float: left;
      font-size: 1rem;
      margin: 40px 1% 0;
-     padding: 0 2% 2%;
+     padding: 2%;
      width: 23%;
    }
    .bio-box h3 {
@@ -196,7 +224,6 @@ body {
    }
    .bio-copy {
      font-size: 1em;
-     line-height: 1.5;
    }
    .bio-copy a {
      color: green;
